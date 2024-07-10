@@ -1,16 +1,10 @@
-<div class="row">
-    <div class="col-xs-12 mt-3">
-        <img [src]="recipe.imagePath" [alt]="recipe.name" class="img-responsive">
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        <h1>{{ recipe.name }}</h1>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        <div class="btn-group">
+<div class="card">
+    <img class="card-img-top" [src]="recipe.imagePath" [alt]="recipe.name">
+    <div class="card-body">
+        <h5 class="card-title">{{ recipe.name }}</h5>
+        <p class="card-text">{{ recipe.description }}</p>
+        <p class="card-text"></p>
+        <div class="btn-group" appDropdown>
             <button class="btn btn-primary dropdown-toggle" type="button">Manage Recipe <span
                     class="caret"></span></button>
             <ul class="dropdown-menu">
@@ -19,16 +13,5 @@
                 <li><a href="#">Delete recipe</a></li>
             </ul>
         </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-xs-12">
-        {{ recipe.description }}
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-12">
-
     </div>
 </div>
