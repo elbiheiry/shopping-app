@@ -1,3 +1,7 @@
 .list-group-item {
     border-style: groove;
 }
+
+.active {
+    background-color: grey;
+}

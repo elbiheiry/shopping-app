@@ -17,8 +17,4 @@ export class ListComponent implements OnInit{
   constructor (private recipeService: RecipeService) {
     
   }
-
-  onRecipeSelected(recipe: Recipe) {
-    this.recipeService.recipeSelected.emit(recipe);
-  }
 }
