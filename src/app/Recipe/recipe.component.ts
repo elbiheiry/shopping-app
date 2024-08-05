@@ -9,13 +9,6 @@ import { Ingredient } from '../shared/ingredient.model';
   styleUrl: './recipe.component.css'
 })
 export class RecipeComponent implements OnInit{
-  // selectedRecipe!: Recipe;
-
-  constructor (private recipeService: RecipeService) {}
-
   ngOnInit(){
-    // this.recipeService.recipeSelected.subscribe((recipe: Recipe) => {
-    //   this.selectedRecipe = recipe;
-    // })
   }
 }

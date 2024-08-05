@@ -8,8 +8,5 @@ import { RecipeService } from './services/recipe.service';
   // providers : [RecipeService]
 })
 export class AppComponent {
-  loadedFeature = 'recipe';
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
+  
 }
