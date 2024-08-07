@@ -8,9 +8,9 @@
         <textarea name="description" class="form-control" rows="6" formControlName="description"></textarea>
     </div>
     <div class="mb-3">
-        <img class="img-responsive" src="" style="max-height: 300px;">
+        <img class="img-responsive mb-2" [src]="imagePath.value" style="max-height: 300px;">
         <label class="form-label">Image path</label>
-        <input type="text" class="form-control" name="imagePath" formControlName="imagePath">
+        <input type="text" class="form-control" name="imagePath" formControlName="imagePath" #imagePath>
     </div>
     <div class="mb-3" formArrayName="ingredients">
         <div class="row mt-1" *ngFor="let ingredient of controls; let i = index;" [formGroupName]="i">
@@ -32,5 +32,5 @@
         </div>
     </div>
     <button [disabled]="!recipeForm.valid" type="submit" class="btn btn-primary me-1">Save</button>
-    <button type="button" class="btn btn-danger">Cancel</button>
+    <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
 </form>
