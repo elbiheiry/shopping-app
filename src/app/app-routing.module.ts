@@ -5,16 +5,19 @@ import { RecipeComponent } from './Recipe/recipe.component';
 import { StartComponent } from './Recipe/start/start.component';
 import { DetailComponent } from './Recipe/detail/detail.component';
 import { RecipeEditComponent } from './Recipe/recipe-edit/recipe-edit.component';
+import { RecipesResolverService } from './services/recipes-resolver.service';
+import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
   {path:'' , redirectTo: '/recipes' , pathMatch: 'full'},
   {path: 'recipes' , component: RecipeComponent , children : [
     {path: '' , component: StartComponent},
     {path: 'new' , component: RecipeEditComponent},
-    {path: ':id' , component: DetailComponent},
-    {path: ':id/edit' , component: RecipeEditComponent}
+    {path: ':id' , component: DetailComponent , resolve: [RecipesResolverService]},
+    {path: ':id/edit' , component: RecipeEditComponent , resolve: [RecipesResolverService]}
   ]},
-  {path: 'shopping-list' , component: ShoppingListComponent}
+  {path: 'shopping-list' , component: ShoppingListComponent},
+  {path: 'auth' , component: AuthComponent}
 ];
 
 @NgModule({
