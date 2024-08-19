@@ -3,19 +3,16 @@ import { Injectable } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { exhaustMap, Observable, take } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthInterceptorService implements HttpInterceptor {
 
   constructor (private authService : AuthService){}
 
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
     return this.authService.user.pipe(
       take(1),
       exhaustMap(user => {
-        
-        if (!user) {
+        if (!user || !user.token) {
           // If no user is logged in, proceed with the original request
           return next.handle(req);
         }
