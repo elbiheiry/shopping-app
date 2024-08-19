@@ -1,7 +1,8 @@
 <div *ngIf="isLoading" class="col-md-6 mt-3 text-center">
     <app-loading-spinner></app-loading-spinner>
 </div>
-<div class="alert alert-danger col-md-6 mt-3" *ngIf="error">{{error}}</div>
+<!-- <div class="alert alert-danger col-md-6 mt-3" *ngIf="error">{{error}}</div> -->
+<app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert>
 <form (ngSubmit)="onSubmit(authForm)" #authForm="ngForm" *ngIf="!isLoading">
     <div class="row mb-3 col-md-6">
         <!-- Email input -->
