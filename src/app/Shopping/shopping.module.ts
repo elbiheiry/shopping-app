@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RecipeRoutingModule } from '../Recipe/recipe-routing.module';
+import { FormsModule } from '@angular/forms';
 import { authGuard } from '../guards/auth.guard';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,9 +14,11 @@ import { authGuard } from '../guards/auth.guard';
     ShoppingEditComponent
   ],
   imports: [
-    CommonModule , RouterModule.forChild([
+    FormsModule ,
+    SharedModule ,
+    RouterModule.forChild([
       {path: 'shopping-list' , canActivate: [authGuard], component: ShoppingListComponent},
-    ]) ,FormsModule
+    ])
   ]
 })
 export class ShoppingModule { }
