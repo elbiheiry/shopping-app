@@ -17,7 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule ,
     SharedModule ,
     RouterModule.forChild([
-      {path: 'shopping-list' , canActivate: [authGuard], component: ShoppingListComponent},
+      {path: '' , canActivate: [authGuard], component: ShoppingListComponent},
     ])
   ]
 })
