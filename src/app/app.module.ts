@@ -7,12 +7,13 @@ import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { StartComponent } from './Recipe/start/start.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthComponent } from './auth/auth.component';
 import { RecipeModule } from './Recipe/recipe/recipe.module';
 import { SharedModule } from './shared/shared.module';
 import { ShoppingModule } from './Shopping/shopping.module';
 import { CoreModule } from './core.module';
 import { AuthModule } from './auth/auth.module';
+import { StoreModule } from '@ngrx/store';
+import { shoppingListReducer } from './Shopping/shopping-list/store/shopping-list.reducer';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AuthModule } from './auth/auth.module';
     ShoppingModule,
     SharedModule,
     CoreModule,
-    AuthModule
+    AuthModule,
+    StoreModule.forRoot({shoppingList : shoppingListReducer})
   ],
   bootstrap: [AppComponent]
 })

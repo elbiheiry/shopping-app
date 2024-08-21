@@ -12,7 +12,7 @@
             <button class="btn btn-primary dropdown-toggle" type="button">Manage Recipe <span
                     class="caret"></span></button>
             <ul class="dropdown-menu">
-                <li><a routerLink="/shopping-list">To shopping list</a></li>
+                <li><a (click)="onAddToShoppingList()">To shopping list</a></li>
                 <li><a [routerLink]="['/recipes' , id , 'edit']">Edit recipe</a></li>
                 <li><a (click)="onDeleteRecipe()">Delete recipe</a></li>
             </ul>
